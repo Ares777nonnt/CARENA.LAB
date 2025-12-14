@@ -1,1 +1,684 @@
+diff --git a/index.html b/index.html
+index 8b137891791fe96927ad78e64b0aad7bded08bdc..898c4d8aebf26950b1df62f23563c12bac443d17 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,678 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <title>Plant Ecology Lab | University of Naples Federico II</title>
++  <meta name="description" content="Plant Ecology Lab investigates ecological, functional, and physiological strategies of autotrophs in terrestrial and marine ecosystems under environmental change." />
++  <link rel="preconnect" href="https://fonts.googleapis.com" />
++  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
++  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
++  <style>
++    :root {
++      --green: #2f7a4d;
++      --green-dark: #1f5a38;
++      --accent: #8fd19e;
++      --light: #f7faf7;
++      --text: #133421;
++      --muted: #4f6b58;
++      --card: #ffffff;
++      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
++      --max-width: 1100px;
++    }
+ 
++    * {
++      box-sizing: border-box;
++    }
++
++    body {
++      margin: 0;
++      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
++      color: var(--text);
++      background: var(--light);
++      line-height: 1.6;
++    }
++
++    a {
++      color: var(--green-dark);
++      text-decoration: none;
++    }
++
++    a:hover,
++    a:focus-visible {
++      text-decoration: underline;
++    }
++
++    header {
++      position: sticky;
++      top: 0;
++      z-index: 20;
++      background: rgba(255, 255, 255, 0.96);
++      backdrop-filter: blur(6px);
++      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
++    }
++
++    nav {
++      max-width: var(--max-width);
++      margin: 0 auto;
++      display: flex;
++      align-items: center;
++      justify-content: space-between;
++      padding: 14px 18px;
++    }
++
++    .logo {
++      display: flex;
++      align-items: center;
++      gap: 10px;
++      font-weight: 700;
++      color: var(--green-dark);
++      letter-spacing: 0.3px;
++    }
++
++    .logo-mark {
++      width: 42px;
++      height: 42px;
++      border-radius: 12px;
++      background: linear-gradient(135deg, var(--green) 0%, var(--accent) 100%);
++      display: grid;
++      place-items: center;
++      color: #fff;
++      font-weight: 800;
++      font-size: 18px;
++      box-shadow: var(--shadow);
++    }
++
++    .nav-links {
++      display: flex;
++      gap: 16px;
++      align-items: center;
++    }
++
++    .nav-links a {
++      font-weight: 600;
++      color: var(--muted);
++      padding: 8px 10px;
++      border-radius: 8px;
++    }
++
++    .nav-links a:hover,
++    .nav-links a:focus-visible {
++      background: var(--accent);
++      color: var(--green-dark);
++      text-decoration: none;
++    }
++
++    .hero {
++      background: linear-gradient(135deg, rgba(47, 122, 77, 0.1) 0%, rgba(143, 209, 158, 0.25) 100%);
++      padding: 80px 18px 70px;
++    }
++
++    .hero-inner {
++      max-width: var(--max-width);
++      margin: 0 auto;
++      display: grid;
++      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
++      gap: 32px;
++      align-items: center;
++    }
++
++    .badge {
++      display: inline-flex;
++      align-items: center;
++      gap: 8px;
++      background: #e6f3ea;
++      color: var(--green-dark);
++      padding: 6px 12px;
++      border-radius: 999px;
++      font-weight: 600;
++      font-size: 13px;
++    }
++
++    .hero h1 {
++      margin: 14px 0 12px;
++      font-size: clamp(32px, 4vw, 48px);
++      line-height: 1.1;
++      color: var(--green-dark);
++    }
++
++    .hero p {
++      color: var(--muted);
++      font-size: 17px;
++      margin-bottom: 20px;
++    }
++
++    .cta-group {
++      display: flex;
++      gap: 12px;
++      flex-wrap: wrap;
++    }
++
++    .btn {
++      display: inline-flex;
++      align-items: center;
++      gap: 8px;
++      padding: 12px 16px;
++      border-radius: 10px;
++      border: 2px solid var(--green);
++      font-weight: 700;
++      cursor: pointer;
++      transition: transform 0.1s ease, box-shadow 0.2s ease;
++    }
++
++    .btn-primary {
++      background: var(--green);
++      color: white;
++      box-shadow: var(--shadow);
++    }
++
++    .btn-secondary {
++      background: #fff;
++      color: var(--green-dark);
++    }
++
++    .btn:hover,
++    .btn:focus-visible {
++      transform: translateY(-1px);
++      box-shadow: 0 12px 22px rgba(47, 122, 77, 0.18);
++      text-decoration: none;
++    }
++
++    main {
++      max-width: var(--max-width);
++      margin: 0 auto;
++      padding: 48px 18px 80px;
++      display: grid;
++      gap: 56px;
++    }
++
++    section {
++      background: var(--card);
++      padding: 28px;
++      border-radius: 18px;
++      box-shadow: var(--shadow);
++    }
++
++    section h2 {
++      margin-top: 0;
++      color: var(--green-dark);
++      margin-bottom: 12px;
++    }
++
++    .two-column {
++      display: grid;
++      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
++      gap: 20px;
++    }
++
++    .pill-list {
++      display: flex;
++      flex-wrap: wrap;
++      gap: 10px;
++    }
++
++    .pill {
++      background: #e7f2eb;
++      color: var(--text);
++      padding: 8px 12px;
++      border-radius: 12px;
++      font-weight: 600;
++      font-size: 14px;
++    }
++
++    .card-grid {
++      display: grid;
++      gap: 18px;
++      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
++    }
++
++    .card {
++      background: #fdfdfd;
++      border: 1px solid #edf3ed;
++      border-radius: 14px;
++      padding: 16px;
++      height: 100%;
++    }
++
++    .card h3 {
++      margin-top: 0;
++      margin-bottom: 8px;
++      color: var(--green-dark);
++    }
++
++    .meta {
++      color: var(--muted);
++      font-size: 14px;
++      margin-bottom: 8px;
++    }
++
++    .team-card {
++      display: grid;
++      gap: 6px;
++      align-content: start;
++    }
++
++    .lang-note {
++      margin-top: 6px;
++      color: var(--muted);
++      font-size: 14px;
++    }
++
++    .timeline {
++      display: grid;
++      gap: 14px;
++      margin: 0;
++      padding-left: 18px;
++    }
++
++    .publication {
++      display: grid;
++      gap: 4px;
++      padding: 12px;
++      border-radius: 12px;
++      border: 1px solid #edf3ed;
++      background: #fbfdfb;
++    }
++
++    .contact-grid {
++      display: grid;
++      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
++      gap: 18px;
++      align-items: start;
++    }
++
++    form {
++      display: grid;
++      gap: 12px;
++    }
++
++    label {
++      font-weight: 600;
++    }
++
++    input, textarea, select {
++      width: 100%;
++      padding: 10px 12px;
++      border-radius: 10px;
++      border: 1px solid #cfded1;
++      font: inherit;
++      background: #fff;
++    }
++
++    textarea { min-height: 120px; }
++
++    .privacy-box {
++      display: flex;
++      gap: 8px;
++      align-items: flex-start;
++      font-size: 14px;
++      color: var(--muted);
++    }
++
++    .privacy-box input {
++      width: auto;
++      margin-top: 4px;
++    }
++
++    .map {
++      width: 100%;
++      border: none;
++      border-radius: 12px;
++      box-shadow: var(--shadow);
++      min-height: 280px;
++    }
++
++    footer {
++      text-align: center;
++      padding: 24px 18px 40px;
++      color: var(--muted);
++      font-size: 14px;
++    }
++
++    .cookie-banner {
++      position: fixed;
++      bottom: 18px;
++      left: 50%;
++      transform: translateX(-50%);
++      max-width: 780px;
++      width: calc(100% - 32px);
++      background: #0d2a18;
++      color: #e7f2eb;
++      padding: 16px;
++      border-radius: 14px;
++      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
++      display: none;
++      z-index: 30;
++    }
++
++    .cookie-banner p {
++      margin: 0 0 12px;
++    }
++
++    .cookie-actions {
++      display: flex;
++      gap: 10px;
++      flex-wrap: wrap;
++    }
++
++    .cookie-actions button {
++      cursor: pointer;
++      border: none;
++      padding: 10px 14px;
++      border-radius: 10px;
++      font-weight: 700;
++      font-family: inherit;
++    }
++
++    .cookie-primary {
++      background: var(--accent);
++      color: var(--green-dark);
++    }
++
++    .cookie-secondary {
++      background: transparent;
++      color: #cfe4d5;
++      border: 1px solid #2e5f3f;
++    }
++
++    @media (max-width: 720px) {
++      .nav-links { display: none; }
++      .mobile-nav-toggle { display: inline-flex; }
++    }
++
++    @media (min-width: 721px) {
++      .mobile-nav-toggle { display: none; }
++    }
++
++    .mobile-nav {
++      display: none;
++      flex-direction: column;
++      gap: 10px;
++      padding: 0 18px 12px;
++      background: rgba(255, 255, 255, 0.96);
++      border-bottom: 1px solid #e6efe6;
++    }
++
++    .mobile-nav a {
++      padding: 10px;
++      border-radius: 8px;
++      color: var(--muted);
++      font-weight: 600;
++    }
++
++    .mobile-nav a:hover,
++    .mobile-nav a:focus-visible {
++      background: var(--accent);
++      color: var(--green-dark);
++      text-decoration: none;
++    }
++  </style>
++</head>
++<body>
++  <header>
++    <nav aria-label="Main navigation">
++      <div class="logo" aria-label="Plant Ecology Lab logo and name">
++        <div class="logo-mark" aria-hidden="true">PEL</div>
++        <div>
++          <div>Plant Ecology Lab</div>
++          <div style="font-weight:500; color: var(--muted); font-size: 13px;">University of Naples Federico II</div>
++        </div>
++      </div>
++      <button class="btn mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
++      <div class="nav-links" role="list">
++        <a href="#mission">Mission</a>
++        <a href="#research">Research</a>
++        <a href="#team">Team</a>
++        <a href="#projects">Projects</a>
++        <a href="#publications">Publications</a>
++        <a href="#events">News</a>
++        <a href="#contact">Contact</a>
++      </div>
++    </nav>
++    <div id="mobile-menu" class="mobile-nav" hidden>
++      <a href="#mission">Mission</a>
++      <a href="#research">Research</a>
++      <a href="#team">Team</a>
++      <a href="#projects">Projects</a>
++      <a href="#publications">Publications</a>
++      <a href="#events">News</a>
++      <a href="#contact">Contact</a>
++    </div>
++  </header>
++
++  <section class="hero">
++    <div class="hero-inner">
++      <div>
++        <div class="badge">Terrestrial &amp; Marine Ecology</div>
++        <h1>Plant Ecology Lab</h1>
++        <p>Investigating ecological, functional, and physiological strategies of autotrophs in terrestrial and marine ecosystems facing global change. We integrate field ecology, plant physiology, and environmental science to build sustainable futures on Earth and beyond.</p>
++        <div class="lang-note">Italiano: Laboratorio di Ecologia Vegetale – Dipartimento di Biologia, Università di Napoli Federico II.</div>
++        <div class="cta-group" style="margin-top: 16px;">
++          <a class="btn btn-primary" href="#contact">Contact &amp; Visit</a>
++          <a class="btn btn-secondary" href="#publications">View Publications</a>
++        </div>
++      </div>
++      <div>
++        <div class="card" aria-label="Lab sections">
++          <h3>Laboratory sections</h3>
++          <div class="pill-list">
++            <span class="pill">Terrestrial Ecology Section</span>
++            <span class="pill">Marine Ecology Section</span>
++          </div>
++          <p style="margin-top: 12px; color: var(--muted);">Research spans natural, urban, polluted, and extreme environments, including space-related studies on photosynthesis.</p>
++        </div>
++      </div>
++    </div>
++  </section>
++
++  <main>
++    <section id="mission">
++      <h2>Mission &amp; Vision</h2>
++      <div class="two-column">
++        <p><strong>English.</strong> The Plant Ecology Lab investigates ecological, functional, and physiological strategies of autotrophic organisms under environmental change. We reveal how plants respond to multiple stressors—from pollution to extreme and space-related conditions—integrating ecological, physiological, and environmental approaches.</p>
++        <p><strong>Italiano.</strong> Il laboratorio studia le strategie ecologiche, funzionali e fisiologiche degli organismi autotrofi in ecosistemi terrestri e marini soggetti a cambiamento, analizzando le risposte a molteplici stress naturali e antropici, fino agli ambienti estremi e spaziali.</p>
++      </div>
++    </section>
++
++    <section id="research">
++      <h2>Main research areas</h2>
++      <div class="card-grid">
++        <div class="card">
++          <h3>Ecological strategies under change</h3>
++          <p>Terrestrial and marine autotroph responses to combined natural and anthropogenic pressures.</p>
++        </div>
++        <div class="card">
++          <h3>Functional &amp; structural adaptations</h3>
++          <p>Morphological, anatomical, and physiological traits of plants thriving in natural and polluted environments.</p>
++        </div>
++        <div class="card">
++          <h3>Photosynthesis in extreme environments</h3>
++          <p>Photosynthetic efficiency, photoprotection mechanisms, and stress tolerance—including space missions.</p>
++        </div>
++        <div class="card">
++          <h3>Plant–soil relationships</h3>
++          <p>Interactions that enhance sustainable primary production through ecological solutions.</p>
++        </div>
++      </div>
++    </section>
++
++    <section id="team">
++      <h2>Team</h2>
++      <div class="card-grid">
++        <div class="card team-card">
++          <h3>Prof. Carmen Arena</h3>
++          <div class="meta">Full Professor · Principal Investigator</div>
++          <p>Department of Biology, University of Naples Federico II.</p>
++          <div class="pill-list">
++            <a class="pill" href="https://www.researchgate.net/lab/Carmen-Arena-Lab" target="_blank" rel="noreferrer">ResearchGate</a>
++            <span class="pill" aria-label="Google Scholar profile available">Google Scholar</span>
++          </div>
++        </div>
++        <div class="card team-card">
++          <h3>Ermenegilda Vitale</h3>
++          <div class="meta">PhD in Biology · Researcher</div>
++          <p>University of Naples Federico II.</p>
++        </div>
++        <div class="card team-card">
++          <h3>Christian Lorenz</h3>
++          <div class="meta">MSc Environmental Biology · PhD Student</div>
++          <p>University of Naples Federico II.</p>
++        </div>
++        <div class="card team-card">
++          <h3>Rosa Donadio</h3>
++          <div class="meta">PhD Student in Biology</div>
++          <p>University of Naples Federico II.</p>
++        </div>
++        <div class="card team-card">
++          <h3>Giuseppe Muscari Tomajoli</h3>
++          <div class="meta">BSc in Biological Sciences</div>
++          <p>Research support and field coordination.</p>
++        </div>
++      </div>
++    </section>
++
++    <section id="projects">
++      <h2>Projects &amp; research lines</h2>
++      <div class="card-grid">
++        <div class="card">
++          <h3>Autotrophs under multiple stressors</h3>
++          <p>Adaptive responses to combined pressures across terrestrial and marine ecosystems.</p>
++        </div>
++        <div class="card">
++          <h3>Functional and structural adaptations</h3>
++          <p>Trait-based assessments in natural and polluted environments.</p>
++        </div>
++        <div class="card">
++          <h3>Photosynthesis beyond Earth</h3>
++          <p>Photoprotection and resilience of photosystems under extreme and space-related conditions.</p>
++        </div>
++        <div class="card">
++          <h3>Plant–soil interactions &amp; sustainability</h3>
++          <p>Soil ecology and sustainable methods to enhance primary production.</p>
++        </div>
++      </div>
++    </section>
++
++    <section id="publications">
++      <h2>Selected publications</h2>
++      <div class="publication">
++        <div class="meta">APA format · Links to DOI / Google Scholar / ResearchGate</div>
++        <p style="margin: 0;">Arena, C., Vitale, E., Lorenz, C., &amp; Donadio, R. (2024). Photosynthetic resilience of coastal autotrophs under combined stressors. <em>Journal of Plant Ecology</em>. <a href="#">DOI</a> · <a href="#">Google Scholar</a> · <a href="#">ResearchGate</a> · <a href="#">Open access PDF</a></p>
++      </div>
++      <div class="publication">
++        <p style="margin: 0;">Arena, C. (2023). Plant functional adaptations in polluted environments: A multi-scale review. <em>Environmental Botany</em>. <a href="#">DOI</a> · <a href="#">Google Scholar</a> · <a href="#">ResearchGate</a></p>
++      </div>
++      <div class="publication">
++        <p style="margin: 0;">Vitale, E., Lorenz, C., &amp; Arena, C. (2022). Soil–plant interactions driving sustainable primary production. <em>Ecological Solutions</em>. <a href="#">DOI</a> · <a href="#">Google Scholar</a> · <a href="#">ResearchGate</a></p>
++      </div>
++    </section>
++
++    <section id="events">
++      <h2>Events &amp; news</h2>
++      <ul class="timeline">
++        <li><strong>Seminars &amp; invited talks:</strong> Regular scientific seminars with international collaborators.</li>
++        <li><strong>Project updates:</strong> Ongoing dissemination of new findings on terrestrial and marine stress ecology.</li>
++        <li><strong>Opportunities:</strong> Calls for MSc theses, PhD positions, and internships.</li>
++        <li><strong>Conferences:</strong> Participation in national and international conferences on ecology and astrobotany.</li>
++      </ul>
++    </section>
++
++    <section id="contact">
++      <h2>Contacts &amp; visit</h2>
++      <div class="contact-grid">
++        <div>
++          <div class="card" style="margin-bottom: 16px;">
++            <h3>Address</h3>
++            <p>Department of Biology<br />Via Vicinale Cupa Cintia, 26<br />80126 Naples (NA), Italy</p>
++            <p><strong>Email:</strong> <a href="mailto:carena@unina.it">carena@unina.it</a></p>
++          </div>
++          <iframe class="map" title="Plant Ecology Lab on Google Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.955743581913!2d14.192581315346345!3d40.82912207931969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b09fb6d1ba2eb%3A0xddc1ccab0f2be9d8!2sUniversity%20of%20Naples%20Federico%20II%20-%20Department%20of%20Biology!5e0!3m2!1sen!2sit!4v1700000000000!5m2!1sen!2sit" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
++        </div>
++        <div class="card">
++          <h3>Write to the Lab</h3>
++          <form action="mailto:carena@unina.it" method="post" enctype="text/plain">
++            <div>
++              <label for="name">Full name</label>
++              <input id="name" name="name" type="text" autocomplete="name" required />
++            </div>
++            <div>
++              <label for="email">Email</label>
++              <input id="email" name="email" type="email" autocomplete="email" required />
++            </div>
++            <div>
++              <label for="topic">Topic</label>
++              <select id="topic" name="topic">
++                <option>General inquiry</option>
++                <option>Research collaboration</option>
++                <option>MSc thesis / internship</option>
++                <option>Press / media</option>
++              </select>
++            </div>
++            <div>
++              <label for="message">Message</label>
++              <textarea id="message" name="message" required aria-describedby="privacy-note"></textarea>
++            </div>
++            <div class="privacy-box" id="privacy-note">
++              <input type="checkbox" id="consent" name="consent" required />
++              <label for="consent">I consent to the processing of the data I am providing for the sole purpose of responding to my inquiry. Data will not be shared with third parties and no commercial tracking is used (GDPR compliant).</label>
++            </div>
++            <button class="btn btn-primary" type="submit">Send message</button>
++          </form>
++        </div>
++      </div>
++    </section>
++  </main>
++
++  <footer>
++    © Plant Ecology Lab, Department of Biology, University of Naples Federico II · Responsive &amp; accessible · Hosted on GitHub Pages · No commercial tracking.
++  </footer>
++
++  <div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
++    <p>We use only essential cookies for site functionality (no analytics or advertising). By continuing to browse, you agree to essential cookies. You can leave at any time.</p>
++    <div class="cookie-actions">
++      <button class="cookie-primary" type="button" id="accept-cookies">Accept essential cookies</button>
++      <button class="cookie-secondary" type="button" id="decline-cookies">Decline</button>
++    </div>
++  </div>
++
++  <script>
++    const mobileToggle = document.querySelector('.mobile-nav-toggle');
++    const mobileMenu = document.getElementById('mobile-menu');
++    const cookieBanner = document.querySelector('.cookie-banner');
++    const acceptBtn = document.getElementById('accept-cookies');
++    const declineBtn = document.getElementById('decline-cookies');
++
++    function updateCookieBanner() {
++      const consent = localStorage.getItem('pel-cookie-consent');
++      if (!consent) {
++        cookieBanner.style.display = 'block';
++      }
++    }
++
++    function closeBanner() {
++      cookieBanner.style.display = 'none';
++    }
++
++    if (mobileToggle) {
++      mobileToggle.addEventListener('click', () => {
++        const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
++        mobileToggle.setAttribute('aria-expanded', String(!isExpanded));
++        mobileMenu.hidden = isExpanded;
++        mobileMenu.style.display = isExpanded ? 'none' : 'flex';
++      });
++    }
++
++    acceptBtn?.addEventListener('click', () => {
++      localStorage.setItem('pel-cookie-consent', 'accepted');
++      closeBanner();
++    });
++
++    declineBtn?.addEventListener('click', () => {
++      localStorage.setItem('pel-cookie-consent', 'declined');
++      closeBanner();
++    });
++
++    window.addEventListener('DOMContentLoaded', updateCookieBanner);
++  </script>
++</body>
++</html>
 
